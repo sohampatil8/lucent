@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: lucent-database-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: database-pod
   ports:
     - protocol: TCP
       port: 5432
       targetPort: 5432
-      nodePort: 30007

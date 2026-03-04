@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: lucent-backend-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: backend-pod
   ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 5000
-    nodePort: 8080
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
