@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lucent-database-pod
+  labels:
+    app: database-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-pod
+  template:
+    metadata:
+      labels:
+        app: database-pod
+    spec:
+      containers:
+      - name: lucent-database
+        image: sohampatil08/lucent_database
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        env:
+        - name: POSTGRES_DB
+          value: notion_cms
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: Pass@123

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lucent-backend-pod
+  labels:
+    app: backend-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-pod
+  template:
+    metadata:
+      labels:
+        app: backend-pod
+    spec:
+      containers:
+      - name: lucent-backend
+        image: sohampatil08/lucent_backend
+        ports:
+        - containerPort: 5000
+          protocol: TCP

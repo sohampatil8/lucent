@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lucent-frontend-pod
+  labels:
+    app: frontend-pod 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-pod
+  template:
+    metadata:
+      labels:
+        app: frontend-pod
+    spec:
+      containers:
+      - name: lucent-frontend 
+        image: sohampatil08/lucent_frontend
+        ports:
+        - containerPort: 5173
+          protocol: TCP
