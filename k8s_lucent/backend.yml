@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lucent-backend
-        image: sohampatil08/lucent_k8s_backend
+        image: sohampatil08/lucent-k8s-backend
         ports:
         - containerPort: 5000
           protocol: TCP
