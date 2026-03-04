@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lucent-database
-        image: sohampatil08/lucent_database
+        image: sohampatil08/lucent_k8s_database
         ports:
         - containerPort: 5432
           protocol: TCP

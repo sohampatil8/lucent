@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lucent-frontend 
-        image: sohampatil08/lucent_frontend
+        image: sohampatil08/lucent_k8s_frontend
         ports:
         - containerPort: 5173
           protocol: TCP
