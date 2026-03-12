@@ -1,13 +1,28 @@
+# NOAD PORT
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: lucent-frontend-service
+# spec:
+#   type: NodePort
+#   selector:
+#     app: frontend-pod
+#   ports:
+#   - protocol: TCP
+#     port: 5173
+#     targetPort: 5173
+#     nodePort: 30007
+
+# LOAD BALANCER
 apiVersion: v1
 kind: Service
 metadata:
   name: lucent-frontend-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: frontend-pod
   ports:
-  - protocol: TCP
-    port: 5173
-    targetPort: 5173
-    nodePort: 30007
+    - protocol: TCP
+      port: 80
+      targetPort: 5173
